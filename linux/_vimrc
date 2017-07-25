@@ -1,0 +1,61 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+"input <ESC> :h ... to query keywords
+
+color newtorte
+
+"set encoding=utf-8
+
+"confirm if unsaved
+set confirm
+
+"no backup file & swap file
+set nobackup
+set noswapfile
+
+"no line wrapping
+set nowrap
+
+"show line number
+set number
+
+"indent setting. Overrides smartindent and autoindent
+set cindent
+
+"replace tab input with space, set it to 4 space, and enable <BS> to delete 4 space
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+
+"highlight current line
+set cursorline
+
+"no toolbar
+set guioptions-=T
+
+"font
+set guifont=Courier\ New:h20
+
+"window size
+set lines=35 columns=70
+
+"status bar
+set laststatus=2      
+highlight StatusLine cterm=bold ctermfg=yellow ctermbg=blue
+set statusline=%0.20f%m[%{(&ff).':'.(&fenc==\"\"?&enc:&fenc)}]\ \|\ R%l\/%L\ C%c\ %B\ \|\ %{strftime('%m\.%d\ %H:%M\ %a')}
+
+"when file is modified outside, read it automatically.
+set autoread
+
+"folding settings
+set nofoldenable
+set foldmethod=indent
+set foldcolumn=0
+set foldlevel=3
+set foldclose=all
+
