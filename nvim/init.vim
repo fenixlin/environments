@@ -22,7 +22,7 @@ set number
 
 " tab设置
 set expandtab  " 禁止在代码中使用tab
-set smarttab  " 使用shiftwidth，不考虑tabstop
+"set smarttab  " 使用shiftwidth，不考虑tabstop
 set shiftwidth=4  " 自动缩进的长度
 set tabstop=4  " tab等同的空格长度
 set softtabstop=4  " 参考此宽度，决定按tab时插入的制表符数量(避免shiftwidth与tabstop不一致)

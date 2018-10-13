@@ -22,20 +22,17 @@ cp ./init.vim ~/.config/nvim/init.vim
 # 安装init.vim中声明的插件
 :PlugInstall
 
-# 为airline安装字体
-#wget https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf
-#sudo mkdir -p /usr/share/fonts/custom
-#sudo mv PowerlineSymbols.otf /usr/share/fonts/custom
-#sudo chmod 744 /usr/share/fonts/custom/PowerlineSymbols.otf
-#sudo mkfontscale
-#sudo mkfontdir
-#sudo fc-cache -fv
+# 为airline安装字体，安装好后使用droid snas mono for powerline regular)
+# 参考https://vi.stackexchange.com/questions/3359/how-do-i-fix-the-status-bar-symbols-in-the-airline-plugin
+sudo apt-get install fonts-powerline
 
-# 还是这里说的靠谱(下面那个ubuntu的答案，droid snas mono for powerline regular)
-# https://vi.stackexchange.com/questions/3359/how-do-i-fix-the-status-bar-symbols-in-the-airline-plugin
-sudo apt-get install powerline-fonts
+# 如果安装不了参考下面方案
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
+sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
-# 为ale安装检查插件
+# 为ale安装检查插件，后面可以使用:ALEFix来直接修复格式
 # shell linter
 pip install vint
 # python linter
